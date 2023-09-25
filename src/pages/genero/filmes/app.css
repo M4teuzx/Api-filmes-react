@@ -1,0 +1,19 @@
+.poster{
+    width: 20vw;
+    border-radius: 10px;
+   
+}
+
+.filme{
+    font-size: 1.2vw;
+}
+
+.tudo{
+    transition: all ease 0.2s;
+    &:hover{
+        transform: scale(1.1);
+    }}
+
+.container{
+    padding: 1.3vw;
+}
