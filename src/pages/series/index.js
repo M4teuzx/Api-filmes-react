@@ -11,6 +11,12 @@ function Home() {
   const KEY = process.env.REACT_APP_KEY;
   const [navbarBlack, setNavbarBlack] = useState(false);
 
+  const handleSurpriseClick = () => {
+    const randomMovieId = Math.floor(Math.random() * 10000); 
+    const randomMovieLink = `/serie/${randomMovieId}`;
+    window.location.href = randomMovieLink;
+  };
+
   const handleScroll = () => {
     if (window.scrollY > 0) {
       setNavbarBlack(true); 
@@ -72,10 +78,15 @@ function Home() {
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page">Home</a>
+              <Link to="/series" className="txt-deco"><a class="nav-link" aria-current="page">Home</a></Link>
             </li>
             <li class="nav-item">
-              <Link to="/" className="txt-deco"><a class="nav-link active" aria-current="page" href="#">Filmes</a></Link> 
+              <Link to="/" className="txt-deco"><a class="nav-link" aria-current="page" href="#">Filmes</a></Link> 
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-link nav-link" onClick={handleSurpriseClick}>
+                Surpreenda-me
+              </button>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -138,6 +149,7 @@ function Home() {
               <img src="./banner/arcane.png" class="d-block w-100 carrousel-style" />
               </Link>
             </div>
+            
           </div>
           <div class="fade-out-effect"></div>
         </div>
@@ -195,7 +207,7 @@ function Home() {
                   <div className="d-flex justify-content-center">
                     <Link to={`/serie/${movie.id}`} className="emalta">
                       <Movie>
-                        <a className="emalta">{cardNumber}</a>
+                        <a className="emalta">#{cardNumber}</a>
                         <img src={`${imagePath}${movie.poster_path}`} />
                       </Movie>
                     </Link>

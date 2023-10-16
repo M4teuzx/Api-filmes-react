@@ -43,14 +43,14 @@ const Movie = () => {
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Home</a>
+              <Link to="/series" class="txt-deco"><a class="nav-link" aria-current="page" href="#">Home</a></Link>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Gêneros
               </a>
               <ul class="dropdown-menu bg-black text-white">
-              <Link to="/series/genero/28" className="txt-deco"><li><a class="dropdown-item text-white" href="#">Ação</a></li></Link>
+                <Link to="/series/genero/28" className="txt-deco"><li><a class="dropdown-item text-white" href="#">Ação</a></li></Link>
                 <Link to="/series/genero/16" className="txt-deco"><li><a class="dropdown-item text-white" href="#">Animação</a></li></Link>
                 <Link to="/series/genero/35" className="txt-deco"><li><a class="dropdown-item text-white" href="#">Comédia</a></li></Link>
                 <Link to="/series/genero/80" className="txt-deco"><li><a class="dropdown-item text-white" href="#">Crime</a></li></Link>
